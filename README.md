@@ -27,7 +27,15 @@ With a working devise environment, the only thing you need to do is:
 - in your routes change `devise_for ModelName` with `devise_ios_rails_for ModelName` (ModelName is usually User)
 - authentication is handled by user token which is generated for each user during the registration process. 
 
-To make it work you need to run migration that adds `authentication_token` column to your Devise model.
+Add the following line to your ModelName model
+```ruby 
+# app/models/model_name.rb
+class ModelName < ActiveRecord::Base
+  acts_as_token_authenticatable
+  ...
+end
+```
+Add a migration for adding `authentication_token` column to your Devise model.
 If your ModelName is `User` then the migration should look like this:
 ```ruby
 class AddUniqueTokenToUser < ActiveRecord::Migration
