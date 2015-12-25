@@ -32,6 +32,9 @@ module DeviseIosRails
           user.provider    = attributes[:provider]
           user.uid         = attributes[:uid]
           user.oauth_token = attributes[:oauth_token]
+          user.current_sign_in_at = Time.now()
+          user.last_sign_in_at = Time.now()
+          user.confirmed_at = Time.now()
         end
       end
     end
