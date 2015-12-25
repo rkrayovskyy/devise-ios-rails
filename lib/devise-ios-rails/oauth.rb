@@ -21,8 +21,8 @@ module DeviseIosRails
           user.email       = attributes[:email]
           user.password    = Devise.friendly_token[0,20]
           user.first_name  = attributes[:first_name]   # assuming the user model has a name
-    user.last_name   = attributes[:last_name]
-    user.avatar      = attributes[:avatar] # assuming the user model has an image
+          user.last_name   = attributes[:last_name]
+          user.avatar      = attributes[:avatar] # assuming the user model has an image
           user.gender      = attributes[:gender]
           user.birthday    = attributes[:birthday]
           user.country     = attributes[:country]
