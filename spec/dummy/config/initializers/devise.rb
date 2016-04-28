@@ -31,7 +31,6 @@ Devise.setup do |config|
   # ==> Configuration for :validatable
   config.password_length = 4..128
   config.timeout_in = 30.minutes
-  config.expire_auth_token_on_timeout = false
 
   # ==> Configuration for :recoverable
   config.reset_password_keys = [ :email ]
